@@ -1,0 +1,14 @@
+# Node.js
+node_modules/
+
+# Logs y archivos temporales
+logs/
+*.log
+npm-debug.log*
+
+# Construcción de archivos
+/build/
+
+# Dependencias de desarrollo
+.DS_Store
+.env
