@@ -1,13 +1,14 @@
-const {Router} = require('express');
+// contactRouter.js
+const { Router } = require('express');
 const router = Router();
-/* const { getContac } = require('../controllers/controllerContac'); */
+const userMiddleware = require('../middlewares/userMiddleware');
+const {  getAllContact, postNewContact, updateContact, deleteContact} = require('../controller/controllerContact');
 
-router.get('/', (req, res) => {
-    res.send("soy el get de contac")
-});
+router.use(userMiddleware);
 
-router.post('/', (req, res) => {
-    res.send("soy el post de contac")
-});
+router.get('/contacts/:userId', getAllContact);
+router.post('/:userId', postNewContact);
+router.put('/:userId/contacts/:contactId', updateContact);
+router.delete('/:userId/contacts/:contactId', deleteContact);
 
 module.exports = router;
