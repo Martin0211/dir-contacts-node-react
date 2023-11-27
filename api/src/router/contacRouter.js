@@ -1,10 +1,10 @@
 // contactRouter.js
 const { Router } = require('express');
 const router = Router();
-const userMiddleware = require('../middlewares/userMiddleware');
+const contactMiddleware = require('../middlewares/contactMiddleware');
 const {  getAllContact, postNewContact, updateContact, deleteContact} = require('../controller/controllerContact');
 
-router.use(userMiddleware);
+router.use(contactMiddleware);
 
 router.get('/contacts/:userId', getAllContact);
 router.post('/:userId', postNewContact);
