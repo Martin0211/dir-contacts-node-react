@@ -21,7 +21,7 @@ const getAllContact = async (req, res) => {
 };
 
 const postNewContact = async (req, res) => {
-    console.log(req.userId);
+    
     try {
         const { firstName, lastName, phoneNumber, email } = req.body;
 
