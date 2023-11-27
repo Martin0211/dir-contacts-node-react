@@ -30,7 +30,7 @@ const postNewUser = async (req, res) => {
 
   const putUpdateUser = async (req, res) => {
     try {
-      const { id } = req.params; // El id del usuario que deseas actualizar
+      const { id } = req.params;
       const { username } = req.body;
   
       // Verifica si el usuario existe
