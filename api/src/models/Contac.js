@@ -1,8 +1,5 @@
 const { DataTypes } = require('sequelize');
-const { v4: uuidv4 } = require('uuid');
-const User = require('../models/User');
-// Exportamos una funcion que define el modelo
-// Luego le injectamos la conexion a sequelize.
+
 module.exports = (sequelize) => {
   // defino el modelo
   return sequelize.define('Contact', {
@@ -30,5 +27,3 @@ module.exports = (sequelize) => {
   });
 };
 
-// Establece la relación muchos a uno con User
-/* Contact.belongsTo(User, { foreignKey: 'userId' }); */
