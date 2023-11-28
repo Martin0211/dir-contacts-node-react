@@ -4,7 +4,7 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT} = require("../../config
 const userFactory = require("./User");
 const contactFactory = require("./Contac");
 
-const sequelize = new Sequelize(`postgres://contact_directory_postgres_user:keo5wkLMhFnfSswiQcNlI0Wr4KKOoNAq@dpg-clijj51e313s73agahsg-a/contact_directory_postgres}`, {
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
     logging: false,
     native: false,
 });
