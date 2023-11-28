@@ -11,7 +11,7 @@ export const PUT_UPDATE_CONTACT = "PUT_UPDATE_CONTACT"
 export const DELETE_CONTACT = "DELETE_CONTACT"
 
 
-const URL = process.env.REACT_APP_BACKEND_URL
+const URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:3001/api";
 
 export const getUserAll = () => {
     return async function (dispatch) {
