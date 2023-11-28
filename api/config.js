@@ -1,5 +1,5 @@
 module.exports = {
-    FRONTEND_URL: process.env.FRONTEND_URL || "http://localhost:3000/",  
+    FRONTEND_URL: process.env.FRONTEND_URL || true,  
     DB_USER: process.env.DB_USER || "postgres",
     DB_PASSWORD: process.env.DB_PASSWORD || "admin",
     DB_HOST: process.env.DB_HOST || "localhost",
