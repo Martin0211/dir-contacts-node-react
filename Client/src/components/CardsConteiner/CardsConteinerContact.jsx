@@ -12,7 +12,24 @@ const CardsWrapper = styled.div`
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
-`;
+   margin: 7vw;
+`
+const Div = styled.div`
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+const Button = styled.div`
+margin: 2vw;
+padding: 2vw;
+border: 1px solid #727171;
+border-radius: 10px;
+&:hover {
+    background-color: #383838; 
+  }
+`
 
 
 // Definimos nuestro componente funcional CardsContainer
@@ -80,7 +97,7 @@ const CardsContainerContact = ({ props }) => {
     };
 
 
-    return ( <div>
+    return ( <Div>
         <CardsWrapper>
             {contacts.map(({ id, firstName, lastName, phoneNumber, email }) => (
                 <div key={id}>
@@ -109,10 +126,10 @@ const CardsContainerContact = ({ props }) => {
                     onCancel={() => setShowCreateForm(false)}
                 />
             )}
-            <button onClick={() => setShowCreateForm(true)}>Create New Contact</button>
-            <Link to="../">Go Back</Link>
+            <Button onClick={() => setShowCreateForm(true)}>Create Nuevo Contacto</Button>
+            <Link to="../">Atras</Link>
 
-    </div>
+    </Div>
     );
 }
 

@@ -6,6 +6,7 @@ const PrincipalDiv = styled.button`
 position: static;
   width: 40vw;
   height: 12vh;
+  margin: 1vw;
   border-radius: 10px;
   border: 1px solid #a09f9f;
   background-color: white;
@@ -24,7 +25,6 @@ const Card = (props) => {
         <PrincipalDiv>
             <LinkCard to={`contacts/${props.id}`}>
                 <h2>{props.username}</h2>
-                <h3>cantidad de contactos</h3>
             </LinkCard>
         </PrincipalDiv>
     )
