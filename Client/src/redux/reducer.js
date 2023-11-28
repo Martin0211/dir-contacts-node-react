@@ -1,5 +1,6 @@
 import { GET_USER_ALL, POST_CREATE_USER, DELETE_USER, PUT_UPDATE_USER, GET_CONTACT_BY_USER_ID, POST_CREATE_CONTACT, PUT_UPDATE_CONTACT, DELETE_CONTACT } from './actions';
 
+
 const initialState = {
     users: [],
     contacts: [],

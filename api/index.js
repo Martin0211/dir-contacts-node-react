@@ -1,10 +1,11 @@
-const app = require("./app")
-const {conn} = require("./src/models/index")
+const app = require("./app");
+const {conn} = require("./src/models/index");
+const { PORT } = require("./config");
 
 conn.sync({
     force: false
 }).then(() => {
-    app.listen(3001, () => {
-        console.log("Servidor funcionando en el puerto 3001");
+    app.listen(PORT, () => {
+        console.log(`Servidor funcionando en el puerto ${PORT}`);
     })
 })

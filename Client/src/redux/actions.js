@@ -11,10 +11,12 @@ export const PUT_UPDATE_CONTACT = "PUT_UPDATE_CONTACT"
 export const DELETE_CONTACT = "DELETE_CONTACT"
 
 
+const URL = process.env.REACT_APP_BACKEND_URL
+
 export const getUserAll = () => {
     return async function (dispatch) {
         try {
-            const apiData = await axios.get(`http://localhost:3001/api/user/`);
+            const apiData = await axios.get(`${URL}/user/`);
             const user = apiData.data;
             dispatch({ type: GET_USER_ALL, payload: user });
 
@@ -28,7 +30,7 @@ export const getUserAll = () => {
 export const postCreateUser = (formData) => {
     return async function (dispatch) {
         try {
-            const apiData = await axios.post(`http://localhost:3001/api/user/`, formData);
+            const apiData = await axios.post(`${URL}/user/`, formData);
             const createUser = apiData.data;
             dispatch({ type: POST_CREATE_USER, payload: createUser });
 
@@ -43,7 +45,7 @@ export const postCreateUser = (formData) => {
 export const deleteUser = (id) => {
     return async function (dispatch) {
         try {
-            await axios.delete(`http://localhost:3001/api/user/${id}`);
+            await axios.delete(`${URL}/user/${id}`);
             dispatch({ type: DELETE_USER, payload: id });
         } catch (error) {
             window.alert(error);
@@ -54,7 +56,7 @@ export const deleteUser = (id) => {
 export const putUpdateUser = (id, username) => {
     return async function (dispatch) {
         try {
-            const apiData = await axios.put(`http://localhost:3001/api/user/${id}`, { username });
+            const apiData = await axios.put(`${URL}/user/${id}`, { username });
             const updatedUser = apiData.data; 
             dispatch({ type: PUT_UPDATE_USER, payload: updatedUser });
         } catch (error) {
@@ -66,7 +68,7 @@ export const putUpdateUser = (id, username) => {
 export const getContactByUserId = (id) => {
     return async function (dispatch) {
         try {
-            const apiData = await axios.get(`http://localhost:3001/api/contac/contacts/${id}`);
+            const apiData = await axios.get(`${URL}/contac/contacts/${id}`);
             const contacts = apiData.data;
             dispatch({ type: GET_CONTACT_BY_USER_ID, payload: contacts });
 
@@ -80,7 +82,7 @@ export const getContactByUserId = (id) => {
 export const postCreateContact = (id, formData) => {
     return async function (dispatch) {
         try {
-            const apiData = await axios.post(`http://localhost:3001/api/contac/${id}`, formData);
+            const apiData = await axios.post(`${URL}/contac/${id}`, formData);
             const createContact = apiData.data;
             dispatch({ type: POST_CREATE_CONTACT, payload: createContact });
 
@@ -95,7 +97,7 @@ export const postCreateContact = (id, formData) => {
 export const deleteContact = (userId,contactId) => {
     return async function (dispatch) {
         try {
-            await axios.delete(`http://localhost:3001/api/contac/${userId}/contacts/${contactId}`);
+            await axios.delete(`${URL}/contac/${userId}/contacts/${contactId}`);
             dispatch({ type: DELETE_CONTACT, payload: userId,contactId });
         } catch (error) {
             window.alert(error);
@@ -106,7 +108,7 @@ export const deleteContact = (userId,contactId) => {
 export const putUpdate = (userId,contactId, formData) => {
     return async function (dispatch) {
         try {
-            const apiData = await axios.put(`http://localhost:3001/api/contac/${userId}/contacts/${contactId}`, formData);
+            const apiData = await axios.put(`${URL}/contac/${userId}/contacts/${contactId}`, formData);
             const updatedcontact = apiData.data;
             dispatch({ type: PUT_UPDATE_CONTACT, payload: updatedcontact});
         } catch (error) {
